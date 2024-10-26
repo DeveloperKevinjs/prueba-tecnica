@@ -1,0 +1,22 @@
+<div class="flex gap-x-5 justify-center items-center w-full">
+    <app-search
+    (onDebounce)="onDebounce($event)"
+    ></app-search>
+    <button  mat-button (click)="openModalContinent()" type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2">select your continent</button>
+</div>
+<div class="container mx-auto my-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div *ngFor="let count of filteredCountries" class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between">
+            <img class="rounded-t-lg h-40 w-full object-cover" [src]="imageUrls[count.name]" alt="" />
+            <div class="p-5 flex flex-col h-full">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> {{count.name}} </h5>
+                </a>
+                <button mat-button (click)="openModal(count)" class="inline-flex items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mt-auto">
+                    ver mas
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

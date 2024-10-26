@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Información</h2>
+<mat-dialog-content class="mat-typography">
+  <img [src]="url" alt="bandera">
+  <h6 class="text-sm text-center">{{nameCountry}} - {{nameContinent}} </h6>
+  <div>
+        <p class="text-lg"><span class="font-bold text-blue-600  ">Capital: </span>{{nameCapital}}</p>
+        <p class="text-lg"><span class="font-bold text-blue-600  ">Language: </span>{{nameLanguage}}</p>
+        <p class="text-lg"><span class="font-bold text-blue-600  ">Currency: </span>{{nameCurrency}}</p>
+        <p class="text-lg"><span class="font-bold text-blue-600  ">Region: </span></p>
+        <div>
+          <ul  *ngFor="let regio of regions" class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">{{regio.name}}</li>
+          </ul>
+        </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cerrar</button>
+</mat-dialog-actions>

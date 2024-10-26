@@ -1,0 +1,22 @@
+<div class="bg-white p-4">
+  <div class="flex justify-between items-center mb-4">
+    <h6 class="text-sm font-semibold">Filtrar por continentes</h6>
+    <button class="text-blue-500 hover:underline" (click)="clearSelection()">Limpiar</button>
+    <button class="text-blue-500 hover:underline" (click)="closeDialog()">Guardar Selección</button>
+  </div>
+
+  <div class="grid grid-cols-2 gap-4">
+    <div *ngFor="let continent of continents" 
+         (click)="toggleSelection(continent)" 
+         [class.selected]="continent.selected" 
+         class="flex flex-col items-center cursor-pointer">
+      <div class="w-24 h-16 bg-blue-200 rounded-md flex items-center justify-center"
+           [ngClass]="{'bg-blue-400': continent.selected}">
+        <img src="#" [alt]="continent.name" class="w-full h-full object-cover rounded-md">
+      </div>
+      <span class="text-sm mt-2"> {{ continent.name }} </span>
+    </div>
+   
+  </div>
+</div>
+
